@@ -1,9 +1,11 @@
-import { Link } from '@chakra-ui/core';
+import { Link as ThemeUILink } from 'theme-ui';
 import NextLink from 'next/link';
 
-const Link = ({ ...props }) => (
+const Link = ({ children, sx, ...props }) => (
   <NextLink {...props} passHref>
-    <Link as='a'>test</Link>
+    <ThemeUILink as='a' sx={sx}>
+      {children}
+    </ThemeUILink>
   </NextLink>
 );
 

@@ -1,12 +1,7 @@
-import Page from '../src/components/Page';
-import Landing from '../src/components/Landing';
 import { Box } from 'theme-ui';
+import Page from '../src/components/Page';
 
 const Home = () => {
-  return (
-    <Box>
-      <Page></Page>
-    </Box>
-  );
+  return <Page>herro there</Page>;
 };
 export default Home;

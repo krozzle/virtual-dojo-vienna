@@ -1,47 +1,79 @@
 import * as React from 'react';
 import Head from 'next/head';
 import { Box, Container, Text, Flex, ThemeProvider } from 'theme-ui';
-import Link from 'next/link';
-import theme from '../theme';
+import Link from './Link';
 import NavLink from './NavLink';
+import theme from '../theme';
 
-const Page = () => (
+const Page = ({ children }) => (
   <ThemeProvider theme={theme}>
     <Head>
       <title>Virtual Dojo Vienna</title>
     </Head>
-    <Box background='black' opacity='0.9' py='4' as='header'>
+    <Box
+      sx={{
+        background: 'black',
+        opacity: 0.9,
+        py: 4,
+      }}
+      as='header'
+    >
       <Container>
-        <Flex align='center' justify='space-between'>
-          <Text fontFamily='body' fontSize='md'>
-            <div>
-              <Link
-                color='white'
-                textDecoration='none'
-                textTransform='uppercase'
-                href='/'
+        <Flex
+          sx={{
+            alignItems: 'center',
+            justifyContent: 'space-between',
+          }}
+        >
+          <Text
+            sx={{
+              fontFamily: 'body',
+              fontSize: 4,
+            }}
+          >
+            <Link
+              sx={{
+                color: 'white',
+                textDecoration: 'none',
+                textTransform: 'uppercase',
+              }}
+              href='/'
+            >
+              <Text
+                as='span'
+                sx={{
+                  fontWeight: 'bold',
+                }}
               >
-                <Text as='span' fontWeight='bold'>
-                  Virtual Dojo
-                </Text>{' '}
-                <Text as='span' color='primary'>
-                  |
-                </Text>{' '}
-                Vienna
-              </Link>
-            </div>
+                Virtual Dojo
+              </Text>{' '}
+              <Text
+                as='span'
+                sx={{
+                  color: 'primary',
+                }}
+              >
+                |
+              </Text>{' '}
+              Vienna
+            </Link>
           </Text>
           <Flex as='nav'>
             <NavLink href='/'>Home</NavLink>
-            <NavLink href='/about'>About us</NavLink>
+
+            <NavLink href='/about'>About</NavLink>
+
             <NavLink href='/memberships'>Memberships</NavLink>
-            <NavLink href='/contact'>Hit us up!</NavLink>
+
+            {/* <NavLink href='/prices'>Prices</NavLink> */}
+            {/* fused with Memberships!! */}
+
+            <NavLink href='/contact'>Contact Us</NavLink>
           </Flex>
         </Flex>
       </Container>
     </Box>
-    <main></main>
-    <Box as='footer'></Box>
+    <main>{children}</main>
   </ThemeProvider>
 );
 
