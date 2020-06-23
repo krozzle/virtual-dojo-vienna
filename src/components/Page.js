@@ -1,9 +1,10 @@
 import * as React from 'react';
 import Head from 'next/head';
 import { Box, Container, Text, Flex, ThemeProvider } from 'theme-ui';
+import theme from './styles/theme';
 import Link from './Link';
 import NavLink from './NavLink';
-import theme from '../theme';
+import Contact from './Contact';
 
 const Page = ({ children }) => (
   <ThemeProvider theme={theme}>
@@ -65,10 +66,11 @@ const Page = ({ children }) => (
 
             <NavLink href='/memberships'>Memberships</NavLink>
 
+            <Contact></Contact>
             {/* <NavLink href='/prices'>Prices</NavLink> */}
             {/* fused with Memberships!! */}
 
-            <NavLink href='/contact'>Contact Us</NavLink>
+            {/* <NavLink href='/contact'>Contact Us</NavLink> */}
           </Flex>
         </Flex>
       </Container>
