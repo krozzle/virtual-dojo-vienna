@@ -37,6 +37,17 @@ export default {
       },
     },
   },
+  forms: {
+    textarea: {
+      defaultValue: 'Talk to us, dawg...',
+      borderColor: 'primary',
+      '&:autofocus': {
+        borderColor: 'primary',
+        boxShadow: t => `0 0 0 2px ${t.colors.primary}`,
+        outline: 'none',
+      },
+    },
+  },
   sizes: {
     container: 960,
     flex: 960,

@@ -10,6 +10,7 @@ const Page = ({ children }) => (
   <ThemeProvider theme={theme}>
     <Head>
       <title>Virtual Dojo Vienna</title>
+      <link rel='icon' href='/vdv-logo.jpg' />
     </Head>
     <Box
       sx={{
