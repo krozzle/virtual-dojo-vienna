@@ -1,16 +1,12 @@
-import Head from 'next/head';
+import Page from '../src/components/Page';
+import Landing from '../src/components/Landing';
+import { Box } from 'theme-ui';
 
-export default function Home() {
+const Home = () => {
   return (
-    <div className='container'>
-      <Head>
-        <title>Create Next App</title>
-        <link rel='icon' href='/favicon.ico' />
-      </Head>
-
-      <main></main>
-
-      <style jsx>{``}</style>
-    </div>
+    <Box>
+      <Page></Page>
+    </Box>
   );
-}
+};
+export default Home;

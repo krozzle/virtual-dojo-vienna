@@ -1,9 +1,9 @@
 import { Link } from '@chakra-ui/core';
 import NextLink from 'next/link';
 
-const Link = ({ children, ...props }) => (
+const Link = ({ ...props }) => (
   <NextLink {...props} passHref>
-    <Link as='a'>{children}</Link>
+    <Link as='a'>test</Link>
   </NextLink>
 );
 
