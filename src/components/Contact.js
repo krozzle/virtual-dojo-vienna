@@ -9,10 +9,15 @@ const Contact = () => {
 
   const customStyles = {
     content: {
-      top: '50%',
-      left: '50%',
+      position: 'fixed',
+      minWidth: '50vw',
+      maxWidth: '80vw',
+      maxHeight: '70vh',
+      top: '50vh',
+      left: '50vw',
       right: 'auto',
       bottom: 'auto',
+      zIndex: '100',
       marginRight: '-50%',
       transform: 'translate(-50%, -50%)',
     },
@@ -22,26 +27,45 @@ const Contact = () => {
   return (
     <>
       <Button onClick={() => SetModalIsOpen(true)}>Hit us up</Button>
-      <Box>
-        <Modal
-          isOpen={modalIsOpen}
-          onRequestClose={() => SetModalIsOpen(false)}
-          style={customStyles}
-        >
-          <Flex
-            sx={{
-              // position: 'fixed',
 
-              opacity: 0.9,
-              justifyContent: 'space-between',
+      <Modal
+        isOpen={modalIsOpen}
+        onRequestClose={() => SetModalIsOpen(false)}
+        style={customStyles}
+      >
+        <Flex
+          sx={{
+            // position: 'fixed',
+
+            opacity: 0.9,
+            justifyContent: 'space-between',
+            alignContent: 'center',
+            alignItems: 'center',
+          }}
+        >
+          <h2>Tell us wassup</h2>
+          <Button
+            onClick={() => SetModalIsOpen(false)}
+            sx={{
+              maxHeight: '2em',
             }}
           >
-            <h2>Contact us!</h2>
-            <Button onClick={() => SetModalIsOpen(false)}>Close dialog</Button>
-          </Flex>
-          <Textarea name='email-us' cols='30' rows='10'></Textarea>
-        </Modal>
-      </Box>
+            &times;
+          </Button>
+        </Flex>
+        <Textarea
+          name='email-us'
+          cols='30'
+          rows='10'
+          placeholder='Say what...?'
+          sx={{
+            minWidth: '50vw',
+            maxWidth: '70vw',
+            maxHeight: '60vh',
+          }}
+        />
+        <Button>Submit</Button>
+      </Modal>
     </>
   );
 };
