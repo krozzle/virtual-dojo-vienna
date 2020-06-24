@@ -17,6 +17,7 @@ const Page = ({ children }) => (
         background: 'black',
         opacity: 0.9,
         py: 4,
+        px: 3,
       }}
       as='header'
     >
@@ -67,7 +68,11 @@ const Page = ({ children }) => (
 
             <NavLink href='/memberships'>Memberships</NavLink>
 
-            <Contact></Contact>
+            <Contact
+            // sx={{
+            //   justifySelf: 'flex-end',
+            // }}
+            ></Contact>
             {/* <NavLink href='/prices'>Prices</NavLink> */}
             {/* fused with Memberships!! */}
 
@@ -77,6 +82,51 @@ const Page = ({ children }) => (
       </Container>
     </Box>
     <main>{children}</main>
+    <Box
+      sx={{
+        position: 'absolute',
+        // width: '100%',
+        background: 'black',
+        color: 'white',
+        opacity: 0.9,
+        bottom: '0',
+        py: 4,
+        px: 3,
+      }}
+      as='footer'
+    >
+      <Container>
+        <Flex>
+          <Flex
+            sx={{
+              flexDirection: 'column',
+            }}
+          >
+            <Text>Follow us</Text>
+            <Link
+              sx={{
+                color: 'white',
+                textDecoration: 'none',
+                textTransform: 'uppercase',
+              }}
+              href='/'
+            >
+              twitter
+            </Link>
+            <Link
+              sx={{
+                color: 'white',
+                textDecoration: 'none',
+                textTransform: 'uppercase',
+              }}
+              href='/'
+            >
+              fb
+            </Link>
+          </Flex>
+        </Flex>
+      </Container>
+    </Box>
   </ThemeProvider>
 );
 

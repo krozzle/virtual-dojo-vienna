@@ -58,6 +58,7 @@ const Contact = () => {
           cols='30'
           rows='10'
           placeholder='Say what...?'
+          autoFocus
           sx={{
             minWidth: '50vw',
             maxWidth: '70vw',
