@@ -1,6 +1,6 @@
 import * as React from 'react';
 import Head from 'next/head';
-import { Box, Container, Text, Flex, ThemeProvider } from 'theme-ui';
+import { Box, Container, Image, Text, Flex, ThemeProvider } from 'theme-ui';
 import theme from './styles/theme';
 import Link from './Link';
 import NavLink from './NavLink';
@@ -84,48 +84,52 @@ const Page = ({ children }) => (
     <main>{children}</main>
     <Box
       sx={{
+        width: '100vw',
         position: 'absolute',
-        // width: '100%',
-        background: 'black',
-        color: 'white',
-        opacity: 0.9,
+        background: 'white',
+        color: 'black',
+        opacity: 0.65,
         bottom: '0',
         py: 4,
         px: 3,
       }}
       as='footer'
     >
-      <Container>
-        <Flex>
-          <Flex
+      <Flex
+        sx={{
+          justifyContent: 'space-between',
+        }}
+      >
+        <Flex
+          sx={{
+            justifyContent: 'space-between',
+            // flexDirection: 'column',
+          }}
+        >
+          <Text>Follow us</Text>
+          <Link
+            as='a'
             sx={{
-              flexDirection: 'column',
+              color: '',
+              textDecoration: 'none',
             }}
+            href='/https://twitch.tv'
           >
-            <Text>Follow us</Text>
-            <Link
-              sx={{
-                color: 'white',
-                textDecoration: 'none',
-                textTransform: 'uppercase',
-              }}
-              href='/'
-            >
-              twitter
-            </Link>
-            <Link
-              sx={{
-                color: 'white',
-                textDecoration: 'none',
-                textTransform: 'uppercase',
-              }}
-              href='/'
-            >
-              fb
-            </Link>
-          </Flex>
+            <Image variant='socials' src='/twitch.png'></Image>
+          </Link>
+          <Image variant='socials' src='/twitter.png'></Image>
+          <Image variant='socials' src='/instagram.png'></Image>
+          <Image variant='socials' src='/facebook.png'></Image>
         </Flex>
-      </Container>
+        <Flex
+          sx={{
+            justifyContent: 'space-between',
+          }}
+        >
+          <Text variant='footer'>Vereinsstatuten</Text>
+          <Text variant='footer'>Impressum</Text>
+        </Flex>
+      </Flex>
     </Box>
   </ThemeProvider>
 );

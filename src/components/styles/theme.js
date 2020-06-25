@@ -38,14 +38,19 @@ export default {
     },
   },
   forms: {
-    textarea: {
-      defaultValue: 'Talk to us, dawg...',
+    modal: {
       borderColor: 'primary',
-      '&:autofocus': {
-        borderColor: 'primary',
-        boxShadow: t => `0 0 0 2px ${t.colors.primary}`,
-        outline: 'none',
-      },
+      minWidth: '45vw',
+      maxWidth: '60vw',
+      maxHeight: '55vh',
+      minHeight: '35vh',
+    },
+  },
+  images: {
+    socials: {
+      width: '1.2em',
+      height: '1.2em',
+      mx: '0.2em',
     },
   },
   sizes: {
@@ -53,6 +58,12 @@ export default {
     flex: 960,
 
     // grid: 960,
+  },
+  text: {
+    footer: {
+      mx: '0.2em',
+      fontSize: '0.85em',
+    },
   },
   breakpoints: ['null', '768', '1024', '1200'],
   space: [0, 4, 8, 16, 32, 64, 128, 256],

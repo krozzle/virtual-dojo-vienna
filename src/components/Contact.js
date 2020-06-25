@@ -47,23 +47,21 @@ const Contact = () => {
           <Button
             onClick={() => SetModalIsOpen(false)}
             sx={{
-              maxHeight: '2em',
+              maxHeight: '2.5em',
+              maxWidth: '2.5em',
+              alignContent: 'center',
             }}
           >
             &times;
           </Button>
         </Flex>
         <Textarea
+          variant='modal'
           name='email-us'
           cols='30'
           rows='10'
-          placeholder='Say what...?'
+          placeholder='say what...'
           autoFocus
-          sx={{
-            minWidth: '50vw',
-            maxWidth: '70vw',
-            maxHeight: '60vh',
-          }}
         />
         <Button>Submit</Button>
       </Modal>
