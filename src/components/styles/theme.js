@@ -55,10 +55,8 @@ export default {
   },
   sizes: {
     container: 960,
-    flex: 960,
-
-    // grid: 960,
   },
+  flex: {},
   text: {
     footer: {
       mx: '0.2em',

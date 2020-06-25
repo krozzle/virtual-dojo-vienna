@@ -106,7 +106,7 @@ const Page = ({ children }) => (
             // flexDirection: 'column',
           }}
         >
-          <Text>Follow us</Text>
+          <Text variant='footer'>Follow us</Text>
           <Link
             as='a'
             sx={{
@@ -121,6 +121,9 @@ const Page = ({ children }) => (
           <Image variant='socials' src='/instagram.png'></Image>
           <Image variant='socials' src='/facebook.png'></Image>
         </Flex>
+        <Text variant='footer' sx={{ justifySelf: 'center' }}>
+          © {new Date().getFullYear()} Virtual Dojo Vienna
+        </Text>
         <Flex
           sx={{
             justifyContent: 'space-between',
