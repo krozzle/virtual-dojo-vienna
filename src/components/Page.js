@@ -5,6 +5,7 @@ import theme from './styles/theme';
 import Link from './Link';
 import NavLink from './NavLink';
 import Contact from './Contact';
+// import pdf from '../../public/statuten_2016.pdf';
 
 const Page = ({ children }) => (
   <ThemeProvider theme={theme}>
@@ -25,7 +26,7 @@ const Page = ({ children }) => (
         <Flex
           sx={{
             alignItems: 'center',
-            justifyContent: 'space-between',
+            justifyContent: 'space-around',
           }}
         >
           <Text
@@ -108,18 +109,17 @@ const Page = ({ children }) => (
         >
           <Text variant='footer'>Follow us</Text>
           <Link
-            as='a'
             sx={{
               color: '',
               textDecoration: 'none',
             }}
             href='/https://twitch.tv'
           >
-            <Image variant='socials' src='/twitch.png'></Image>
+            <Image variant='socials' src='/twitch.svg'></Image>
           </Link>
-          <Image variant='socials' src='/twitter.png'></Image>
-          <Image variant='socials' src='/instagram.png'></Image>
-          <Image variant='socials' src='/facebook.png'></Image>
+          <Image variant='socials' src='/twitter.svg'></Image>
+          <Image variant='socials' src='/instagram.svg'></Image>
+          <Image variant='socials' src='/facebook.svg'></Image>
         </Flex>
         <Text variant='footer' sx={{ justifySelf: 'center' }}>
           © {new Date().getFullYear()} Virtual Dojo Vienna
@@ -129,7 +129,9 @@ const Page = ({ children }) => (
             justifyContent: 'space-between',
           }}
         >
-          <Text variant='footer'>Vereinsstatuten</Text>
+          <a href='/https://virtualdojovienna.com/statuten_2016.pdf'>
+            <Text variant='footer'>Vereinsstatuten</Text>
+          </a>
           <Text variant='footer'>Impressum</Text>
         </Flex>
       </Flex>
