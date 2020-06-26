@@ -53,6 +53,7 @@ export default {
       mx: '0.2em',
     },
   },
+
   sizes: {
     container: 960,
   },
@@ -61,6 +62,10 @@ export default {
     footer: {
       mx: '0.2em',
       fontSize: '0.85em',
+      color: 'black',
+      '&:hover': {
+        color: 'primary',
+      },
     },
   },
   breakpoints: ['null', '768', '1024', '1200'],

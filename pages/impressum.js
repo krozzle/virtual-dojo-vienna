@@ -1,6 +1,7 @@
+import { Box } from 'theme-ui';
 import Page from '../src/components/Page';
 
-const About = () => {
+const Impressum = () => {
   return (
     <Page>
       Lorem ipsum dolor sit amet, consectetur adipisicing elit. Quaerat, labore
@@ -15,4 +16,4 @@ const About = () => {
     </Page>
   );
 };
-export default About;
+export default Impressum;

@@ -108,12 +108,18 @@ const Page = ({ children }) => (
           }}
         >
           <Text variant='footer'>Follow us</Text>
-          <Link href='/https://twitch.tv'>
+          <a href='https://www.twitch.tv/virtualdojovienna'>
             <Image variant='socials' src='/twitch.svg'></Image>
-          </Link>
-          <Image variant='socials' src='/twitter.svg'></Image>
-          <Image variant='socials' src='/instagram.svg'></Image>
-          <Image variant='socials' src='/facebook.svg'></Image>
+          </a>
+          <a href='https://twitter.com/virtualdojo'>
+            <Image variant='socials' src='/twitter.svg'></Image>
+          </a>
+          <a href='https://www.instagram.com/virtualdojovienna'>
+            <Image variant='socials' src='/instagram.svg'></Image>
+          </a>
+          <a href='https://www.facebook.com/VirtualDojoVienna/'>
+            <Image variant='socials' src='/facebook.svg'></Image>
+          </a>
         </Flex>
         <Text variant='footer' sx={{ justifySelf: 'center' }}>
           © {new Date().getFullYear()} Virtual Dojo Vienna
@@ -123,10 +129,12 @@ const Page = ({ children }) => (
             justifyContent: 'space-between',
           }}
         >
-          <a href='/statuten'>
+          <Link href='/statuten'>
             <Text variant='footer'>Vereinsstatuten</Text>
-          </a>
-          <Text variant='footer'>Impressum</Text>
+          </Link>
+          <Link href='/impressum'>
+            <Text variant='footer'>Impressum</Text>
+          </Link>
         </Flex>
       </Flex>
     </Box>

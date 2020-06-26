@@ -25,8 +25,19 @@ const Contact = () => {
 
   Modal.setAppElement('body');
   return (
+    // todo put the styles in theme.js
     <>
-      <Button onClick={() => SetModalIsOpen(true)}>Hit us up</Button>
+      <Button
+        sx={{
+          backgroundColor: 'primary',
+          minHeight: '2em',
+          maxHeight: '2.3em',
+          fontSize: '0.9em',
+        }}
+        onClick={() => SetModalIsOpen(true)}
+      >
+        Hit us up
+      </Button>
 
       <Modal
         isOpen={modalIsOpen}
@@ -63,7 +74,7 @@ const Contact = () => {
           placeholder='say what...'
           autoFocus
         />
-        <Button>Submit</Button>
+        <Button sx={{ mt: '0.5em' }}>Submit</Button>
       </Modal>
     </>
   );
