@@ -108,13 +108,7 @@ const Page = ({ children }) => (
           }}
         >
           <Text variant='footer'>Follow us</Text>
-          <Link
-            sx={{
-              color: '',
-              textDecoration: 'none',
-            }}
-            href='/https://twitch.tv'
-          >
+          <Link href='/https://twitch.tv'>
             <Image variant='socials' src='/twitch.svg'></Image>
           </Link>
           <Image variant='socials' src='/twitter.svg'></Image>
@@ -129,7 +123,7 @@ const Page = ({ children }) => (
             justifyContent: 'space-between',
           }}
         >
-          <a href='/https://virtualdojovienna.com/statuten_2016.pdf'>
+          <a href='/statuten'>
             <Text variant='footer'>Vereinsstatuten</Text>
           </a>
           <Text variant='footer'>Impressum</Text>
