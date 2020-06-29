@@ -122,7 +122,7 @@ const Page = ({ children }) => (
           </a>
         </Flex>
         <Text variant='footer' sx={{ justifySelf: 'center' }}>
-          © {new Date().getFullYear()} Virtual Dojo Vienna
+          © 2010 - {new Date().getFullYear()} Virtual Dojo Vienna
         </Text>
         <Flex
           sx={{
