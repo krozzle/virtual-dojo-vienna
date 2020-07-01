@@ -8,3 +8,4 @@ temp/
 .env
 ormconfig.json
 next-env.d.ts
+index.ts

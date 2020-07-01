@@ -1,9 +1,6 @@
 {
   "compilerOptions": {
-    "lib": [
-      "es5",
-      "es6"
-    ],
+    "lib": ["es5", "es6"],
     "noImplicitAny": true,
     "removeComments": true,
     "preserveConstEnums": true,
@@ -24,27 +21,21 @@
     "isolatedModules": true,
     "jsx": "preserve"
   },
-  "files": [
-    "core.ts",
-    "sys.ts",
-    "types.ts",
-    "scanner.ts",
-    "parser.ts",
-    "utilities.ts",
-    "binder.ts",
-    "checker.ts",
-    "emitter.ts",
-    "program.ts",
-    "commandLineParser.ts",
-    "tsc.ts",
-    "diagnosticInformationMap.generated.ts"
-  ],
-  "include": [
-    "src/**/*.tsx",
-    "./src/**/*.ts"
-  ],
-  "exclude": [
-    "node_modules",
-    "**/*.spec.ts"
-  ]
+  // "files": [
+  //   "core.ts",
+  //   "sys.ts",
+  //   "types.ts",
+  //   "scanner.ts",
+  //   "parser.ts",
+  //   "utilities.ts",
+  //   "binder.ts",
+  //   "checker.ts",
+  //   "emitter.ts",
+  //   "program.ts",
+  //   "commandLineParser.ts",
+  //   "tsc.ts",
+  //   "diagnosticInformationMap.generated.ts"
+  // ],
+  "include": ["src/**/*.tsx", "./src/**/*.ts"],
+  "exclude": ["node_modules", "**/*.spec.ts"]
 }
