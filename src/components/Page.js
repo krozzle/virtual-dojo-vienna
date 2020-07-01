@@ -112,6 +112,9 @@ const Page = ({ children }) => (
           <a href='https://www.twitch.tv/virtualdojovienna'>
             <Image variant='socials' src='/twitch.svg'></Image>
           </a>
+          <a href='https://youtube.com/virtualdojovienna'>
+            <Image variant='socials' src='/youtube.svg'></Image>
+          </a>
           <a href='https://twitter.com/virtualdojo'>
             <Image variant='socials' src='/twitter.svg'></Image>
           </a>

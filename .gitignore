@@ -1,8 +1,10 @@
 .idea/
 .vscode/
+.next
 node_modules/
 build/
 tmp/
 temp/
 .env
 ormconfig.json
+next-env.d.ts
