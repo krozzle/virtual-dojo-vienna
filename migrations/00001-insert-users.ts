@@ -12,7 +12,7 @@ exports.up = async sql => {
 // migrate down => remove users from database
 exports.down = async sql => {
   sql`
-    DELETE FROM products
-      WHERE name IN ('Tigra', 'nozarex', 'k.brownie', 'Rele')
+    DELETE FROM users
+      WHERE handle IN ('Tigra', 'nozarex', 'k.brownie', 'Rele')
   `;
 };

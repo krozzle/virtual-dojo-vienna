@@ -1,3 +1,4 @@
+import 'reflect-metadata';
 import * as React from 'react';
 import Head from 'next/head';
 import { Box, Container, Image, Text, Flex, ThemeProvider } from 'theme-ui';
