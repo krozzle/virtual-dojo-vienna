@@ -1,12 +1,12 @@
 {
   "name": "virtual-dojo-vienna",
-  "version": "0.1.0",
-  "private": true,
-  "scripts": {
-    "dev": "next dev",
-    "build": "next build",
-    "start": "next start",
-    "migrate": "dotenv ley"
+  "version": "0.0.1",
+  "description": "Awesome project developed with TypeORM.",
+  "devDependencies": {
+    "ts-node": "3.3.0",
+    "@types/node": "^8.0.29",
+    "typescript": "3.3.3333",
+    "nodemon": "^2.0.4"
   },
   "dependencies": {
     "@svgr/webpack": "^5.4.0",
@@ -31,7 +31,7 @@
     "typeorm": "^0.2.25",
     "typescript": "^3.9.5"
   },
-  "devDependencies": {
-    "nodemon": "^2.0.4"
+  "scripts": {
+    "start": "ts-node src/index.ts"
   }
 }

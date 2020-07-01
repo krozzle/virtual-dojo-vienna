@@ -1,6 +1,7 @@
-This readme will be populated over time
+# Awesome Project Build with TypeORM
 
-This app will use the following:
-- next.js (nextjs.org)
-- react.js (reactjs.org)
-- google maps api (maps.google.com)
+Steps to run this project:
+
+1. Run `npm i` command
+2. Setup database settings inside `ormconfig.json` file
+3. Run `npm start` command
