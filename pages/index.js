@@ -1,3 +1,4 @@
+import 'reflect-metadata';
 import { Box } from 'theme-ui';
 import Page from '../src/components/Page';
 

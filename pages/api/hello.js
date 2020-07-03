@@ -1,62 +1,80 @@
 // Next.js API route support: https://nextjs.org/docs/api-routes/introduction
 import 'reflect-metadata';
-import gql from 'graphql';
-import { GraphQLServer } from 'graphql-yoga';
-import { createConnection } from 'typeorm';
-import { User } from './entity/User';
+// import * as TypeORM from 'typeorm';
+import { User } from '../../db/entity/User.ts';
+import connect from '../../typeorm';
 
-const typeDefs = gql`
-  type Query {
-    users: [User!]!
-  }
-  type User {
-    id: Number
-    firstName: String!
-    lastName: String!
-    email: String!
-    confirmed: Boolean
-    role: String!
-  }
-`;
+export default (req, res) => {
+  connect()
+    .then(async connection => {
+      const userRepository = TypeORM.getRepository(User);
+      const defaultUser = userRepository.create({
+        email: 'kroz@zle.io',
+        handle: 'MichalLytek',
+        firstName: 'Timber',
+        lastName: 'Saw',
+        password: '12345',
+        confirmed: true,
+        role: 'admin',
+      });
+      res.statusCode = 200;
+      res.json(await userRepository.save(defaultUser));
+    })
+    .catch(error => {
+      res.statusCode = 500;
+      res.json(error);
 
-createConnection()
-  .then(async connection => {
-    console.log('Inserting a new user into the database...');
-    const user = new User();
-    user.firstName = 'Timber';
-    user.lastName = 'Saw';
-    user.email = 'kroz@zle.io';
-    user.confirmed = true;
-    user.role = admin;
+      console.log(error);
+    });
+};
 
-    await connection.manager.save(user);
-    console.log('Saved a new user with id: ' + user.id);
+// console.log('Inserting a new user into the database...');
+// const user = new User();`
+// user.firstName = 'Timber';
+// user.lastName = 'Saw';
+// user.email = 'kroz@zle.io';
+// user.confirmed = true;
+// user.role = 'admin';
 
-    console.log('Loading users from the database...');
-    const users = await connection.manager.find(User);
-    console.log('Loaded users: ', users);
+// await connection.manager.save(user);
+// console.log('Saved a new user with id: ' + user.id);
 
-    console.log('Here you can setup and run express/koa/any other framework.');
-  })
-  .catch(error => console.log(error));
+// console.log('Loading users from the database...');
+// const users = await connection.manager.find(User);
+// console.log('Loaded users: ', users);
 
-// createConnection({
+// console.log('Here you can setup and run express/koa/any other framework.');
+
+// const connectionOptions = {
 //   type: 'postgres',
-//   host: 'localhost',
+//   host: process.env.DB_HOST,
 //   port: 5432,
-//   username: 'kbrownie',
-//   password: 'postgres',
-//   database: 'vdv',
-//   entities: [__dirname + './entity/*.ts'],
+//   username: process.env.DB_USERNAME,
+//   password: process.env.DB_PASSWORD,
+//   database: process.env.DB_NAME,
+//   name: 'graphql',
 //   synchronize: true,
-//   logging: false,
-// })
+//   entities: ['./entity/*.ts'],
+//   migrations: ['./migration/*.ts'],
+//   subscribers: ['./subscriber/*.ts'],
+// };
+
+// const typeDefs = gql`
+//   type Query {
+//     users: [User!]!
+//   }
+//   type User {
+//     id: Number
+//     firstName: String!
+//     lastName: String!
+//     email: String!
+//     confirmed: Boolean
+//     role: String!
+//   }
+// `;
+
+// createConnection()
 //   .then(connection => {
 //     // here you can start to work with your entities
 //   })
 //   .catch(error => console.log(error));
-
-// export default (req, res) => {
-//   res.statusCode = 200;
-//   res.json({ name: 'John Doe' });
-// };
