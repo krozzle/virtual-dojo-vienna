@@ -22,6 +22,6 @@
     "jsx": "preserve",
     "strict": false
   },
-  "include": ["db/**/*{.tsx,.ts,.js}"],
+  "include": ["db/**/*.*"],
   "exclude": ["node_modules", "**/*.spec{.ts,.tsx,.js"]
 }

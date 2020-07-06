@@ -3,5 +3,5 @@
   "ignore": ["node_modules", ".next"],
   "watch": ["src"],
   "ext": "ts",
-  "exec": "ts-node ./db/index.ts"
+  "exec": "ts-node ./src/index.ts"
 }

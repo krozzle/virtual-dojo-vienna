@@ -8,7 +8,6 @@ import {
   CreateDateColumn,
   BaseEntity,
 } from 'typeorm';
-import { metadata } from 'core-js/fn/reflect';
 
 export const ALLOWED_ROLES = {
   MEMBER: 'MEMBER',

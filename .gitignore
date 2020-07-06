@@ -6,7 +6,9 @@ build/
 tmp/
 temp/
 .env
+.env.example
 ormconfig.json
 next-env.d.ts
 index.ts
 typeorm.js
+dist
