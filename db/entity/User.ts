@@ -6,6 +6,7 @@ import {
   Column,
   UpdateDateColumn,
   CreateDateColumn,
+  BaseEntity,
 } from 'typeorm';
 import { metadata } from 'core-js/fn/reflect';
 
@@ -17,7 +18,7 @@ export const ALLOWED_ROLES = {
 
 @ObjectType()
 @Entity()
-export class User {
+export class User extends BaseEntity {
   @Field(type => ID)
   @PrimaryGeneratedColumn()
   readonly id!: number;
