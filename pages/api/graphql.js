@@ -1,4 +1,5 @@
 import { ApolloServer, gql } from 'apollo-server-micro';
+import { User } from '../../db/entity/User';
 
 const typeDefs = gql`
   type Query {
@@ -9,9 +10,10 @@ const typeDefs = gql`
   }
 `;
 
-const resolvers = {
+export const resolvers = {
   Query: {
     users(parent, args, context) {
+      // getUser: async (_: any, args: any) => {
       return [{ name: 'next.js' }];
     },
   },
