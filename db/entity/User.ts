@@ -1,13 +1,19 @@
 import 'reflect-metadata';
 import { ObjectType, ID, Field } from 'type-graphql';
-import { Entity, PrimaryGeneratedColumn, Column } from 'typeorm';
+import {
+  Entity,
+  PrimaryGeneratedColumn,
+  Column,
+  UpdateDateColumn,
+  CreateDateColumn,
+} from 'typeorm';
 import { metadata } from 'core-js/fn/reflect';
 
-// export const ALLOWED_ROLES = {
-//   MEMBER: 'MEMBER',
-//   ORGA: 'ORGA',
-//   ADMIN: 'ADMIN',
-// };
+export const ALLOWED_ROLES = {
+  MEMBER: 'MEMBER',
+  ORGA: 'ORGA',
+  ADMIN: 'ADMIN',
+};
 
 @ObjectType()
 @Entity()
@@ -16,17 +22,17 @@ export class User {
   @PrimaryGeneratedColumn()
   readonly id!: number;
 
-  // @Column()
-  // @Field(() => String)
-  // firstName: string;
+  @Column({ type: 'varchar', nullable: false, unique: true })
+  @Field(() => String)
+  email: string;
+
+  @Column({ type: 'varchar', nullable: false })
+  @Field(() => String)
+  firstName: string;
 
   @Column({ type: 'varchar', nullable: false })
   @Field(() => String)
   lastName: string;
-
-  @Column({ type: 'varchar', nullable: false, unique: true })
-  @Field(() => String)
-  email: string;
 
   @Column({ type: 'varchar', nullable: false })
   @Field(() => String)
@@ -36,7 +42,12 @@ export class User {
   @Field(() => String)
   handle: string;
 
-  @Column({ type: 'text', nullable: false })
+  @Column({
+    type: 'enum',
+    nullable: false,
+    enum: Object.values(ALLOWED_ROLES),
+    default: ALLOWED_ROLES.MEMBER,
+  })
   @Field(() => String)
   role: string;
 
@@ -44,23 +55,23 @@ export class User {
   @Field(() => Boolean)
   confirmed: boolean;
 
-  // @Column({ type: 'varchar', nullable: false })
-  // @Field(() => String)
-  // mainGame: string;
+  @Column({ type: 'varchar', nullable: false })
+  @Field(() => String)
+  mainGame: string;
 
-  // @Column({ type: 'varchar', nullable: true })
-  // @Field(() => String)
-  // sideGame: string;
+  @Column({ type: 'varchar', nullable: true })
+  @Field(() => String)
+  sideGame: string;
 
-  // @CreateDateColumn()
-  // @Field(() => Date)
-  // createdAt!: Date;
+  @CreateDateColumn({ nullable: false })
+  @Field(() => Date)
+  createdAt!: Date;
 
-  // @Column()
-  // @Field(() => Date)
-  // updatedAt!: Date;
+  @UpdateDateColumn({ nullable: false })
+  @Field(() => Date)
+  updatedAt: Date;
 
-  // @Column()
-  // // @Field(type => Int)
-  // age: number;
+  @Column({ type: 'boolean', nullable: false })
+  @Field(type => Boolean)
+  isActive: boolean;
 }

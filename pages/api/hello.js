@@ -9,13 +9,16 @@ export default (req, res) => {
     .then(async connection => {
       const userRepository = TypeORM.getRepository(User);
       const defaultUser = userRepository.create({
-        email: 'kroz@zle.io',
-        handle: 'MichalLytek',
-        firstName: 'Timber',
-        lastName: 'Saw',
+        email: 'krozzlerino@zle.io',
+        firstName: 'kroz',
+        lastName: 'zaw',
         password: '12345',
+        handle: 'krozzle',
+        role: 'ADMIN',
         confirmed: true,
-        role: 'admin',
+        mainGame: 'sfv',
+        sideGame: 'mhw',
+        isActive: true,
       });
       res.statusCode = 200;
       res.json(await userRepository.save(defaultUser));

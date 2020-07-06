@@ -1,6 +1,9 @@
+import 'reflect-metadata';
+import { ApolloServer } from 'apollo-server';
 import * as TypeORM from 'typeorm';
 import { User } from './db/entity/User';
 
+// ! this one below works (shout outs to @karlhorky)
 let connection;
 export default function connect() {
   if (connection) {
@@ -23,3 +26,13 @@ export default function connect() {
   });
   return connection;
 }
+// ! this one above works (shout outs to @karlhorky)
+
+// ? didn't work
+// export async function start() {
+//   const connection = await createConnection();
+//   const schema = await buildSchema();
+//   const server = new ApolloServer({ schema });
+//   await server.listen(4000);
+//   console.log('Server has started!');
+// }
