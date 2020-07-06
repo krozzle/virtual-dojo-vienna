@@ -4,6 +4,7 @@ import * as TypeORM from 'typeorm';
 import { User } from '../../db/entity/User.ts';
 import connect from '../../typeorm';
 
+// ! this code below works
 export default (req, res) => {
   connect()
     .then(async connection => {
@@ -30,6 +31,7 @@ export default (req, res) => {
       console.log(error);
     });
 };
+// ! this code above works
 
 // console.log('Inserting a new user into the database...');
 // const user = new User();`
