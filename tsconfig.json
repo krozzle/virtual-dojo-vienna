@@ -1,6 +1,7 @@
 {
   "compilerOptions": {
-    "lib": ["es5", "es6"],
+    "lib": ["dom", "es5", "es6", "es2017", "ESNext.AsyncIterable"],
+
     "noImplicitAny": true,
     "removeComments": true,
     "preserveConstEnums": true,
@@ -13,29 +14,14 @@
     "sourceMap": true,
     "allowJs": true,
     "skipLibCheck": true,
-    "strict": false,
     "forceConsistentCasingInFileNames": true,
     "noEmit": true,
     "esModuleInterop": true,
     "resolveJsonModule": true,
     "isolatedModules": true,
-    "jsx": "preserve"
+    "jsx": "preserve",
+    "strict": false
   },
-  "files": [
-    "core.ts",
-    "sys.ts",
-    "types.ts",
-    "scanner.ts",
-    "parser.ts",
-    "utilities.ts",
-    "binder.ts",
-    "checker.ts",
-    "emitter.ts",
-    "program.ts",
-    "commandLineParser.ts",
-    "tsc.ts",
-    "diagnosticInformationMap.generated.ts"
-  ],
   "include": ["db/**/*{.tsx,.ts,.js}"],
   "exclude": ["node_modules", "**/*.spec{.ts,.tsx,.js"]
 }

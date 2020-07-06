@@ -1,6 +1,6 @@
 // Next.js API route support: https://nextjs.org/docs/api-routes/introduction
 import 'reflect-metadata';
-// import * as TypeORM from 'typeorm';
+import * as TypeORM from 'typeorm';
 import { User } from '../../db/entity/User.ts';
 import connect from '../../typeorm';
 

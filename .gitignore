@@ -8,4 +8,5 @@ temp/
 .env
 ormconfig.json
 next-env.d.ts
+typeorm.js
 index.ts

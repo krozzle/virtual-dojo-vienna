@@ -3,11 +3,11 @@ import { ObjectType, ID, Field } from 'type-graphql';
 import { Entity, PrimaryGeneratedColumn, Column } from 'typeorm';
 import { metadata } from 'core-js/fn/reflect';
 
-export const ALLOWED_ROLES = {
-  MEMBER: 'MEMBER',
-  ORGA: 'ORGA',
-  ADMIN: 'ADMIN',
-};
+// export const ALLOWED_ROLES = {
+//   MEMBER: 'MEMBER',
+//   ORGA: 'ORGA',
+//   ADMIN: 'ADMIN',
+// };
 
 @ObjectType()
 @Entity()
@@ -24,7 +24,7 @@ export class User {
   @Field(() => String)
   lastName: string;
 
-  @Column({ type: 'varchar', nullable: false })
+  @Column({ type: 'varchar', nullable: false, unique: true })
   @Field(() => String)
   email: string;
 
@@ -36,12 +36,7 @@ export class User {
   @Field(() => String)
   handle: string;
 
-  @Column({
-    type: 'enum',
-    enum: Object.values(ALLOWED_ROLES),
-    default: ALLOWED_ROLES.MEMBER,
-    nullable: false,
-  })
+  @Column({ type: 'text', nullable: false })
   @Field(() => String)
   role: string;
 
@@ -49,21 +44,21 @@ export class User {
   @Field(() => Boolean)
   confirmed: boolean;
 
-  @Column({ type: 'varchar', nullable: false })
-  @Field(() => String)
-  mainGame: string;
+  // @Column({ type: 'varchar', nullable: false })
+  // @Field(() => String)
+  // mainGame: string;
 
-  @Column({ type: 'varchar', nullable: true })
-  @Field(() => String)
-  sideGame: string;
+  // @Column({ type: 'varchar', nullable: true })
+  // @Field(() => String)
+  // sideGame: string;
 
-  @CreateDateColumn()
-  @Field(() => Date)
-  createdAt!: Date;
+  // @CreateDateColumn()
+  // @Field(() => Date)
+  // createdAt!: Date;
 
-  @Column()
-  @Field(() => Date)
-  updatedAt!: Date;
+  // @Column()
+  // @Field(() => Date)
+  // updatedAt!: Date;
 
   // @Column()
   // // @Field(type => Int)
