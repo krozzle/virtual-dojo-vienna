@@ -1,0 +1,30 @@
+generator client {
+  provider = "prisma-client-js"
+}
+
+datasource db {
+  provider = "postgresql"
+  url      = "postgres://kbrownie:postgres@localhost:5432/vdv?schema=public"
+}
+
+model user {
+  confirmed Boolean
+  createdAt DateTime       @default(now())
+  email     String         @unique
+  firstName String
+  handle    String
+  id        Int            @default(autoincrement()) @id
+  isActive  Boolean
+  lastName  String
+  mainGame  String
+  password  String
+  role      user_role_enum @default(MEMBER)
+  sideGame  String?
+  updatedAt DateTime       @default(now())
+}
+
+enum user_role_enum {
+  ADMIN
+  MEMBER
+  ORGA
+}
