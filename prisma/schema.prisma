@@ -7,20 +7,25 @@ datasource db {
   url      = "postgres://kbrownie:postgres@localhost:5432/vdv?schema=public"
 }
 
-model user {
-  confirmed Boolean
-  createdAt DateTime       @default(now())
-  email     String         @unique
-  firstName String
-  handle    String
-  id        Int            @default(autoincrement()) @id
-  isActive  Boolean
-  lastName  String
-  mainGame  String
-  password  String
-  role      user_role_enum @default(MEMBER)
-  sideGame  String?
-  updatedAt DateTime       @default(now())
+model User {
+  confirmed  Boolean  @default(false)
+  created_at DateTime @default(now())
+  email      String   @unique
+  firstName  String?
+  handle     String   @unique
+  id         Int      @default(autoincrement()) @id
+  isActive   Boolean  @default(true)
+  lastName   String?
+  mainGame   String?
+  role       roles?
+  sideGames  String?
+  updated_at DateTime @default(now())
+}
+
+enum roles {
+  admin
+  member
+  orga
 }
 
 enum user_role_enum {

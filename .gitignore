@@ -13,3 +13,6 @@ index.ts
 typeorm.js
 dist
 .env.local
+unused/
+.env.typeorm.old
+migrations.sql
