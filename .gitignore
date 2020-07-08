@@ -12,3 +12,4 @@ next-env.d.ts
 index.ts
 typeorm.js
 dist
+.env.local
