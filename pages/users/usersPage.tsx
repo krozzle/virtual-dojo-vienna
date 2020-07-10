@@ -3,11 +3,11 @@ import Head from 'next/head';
 import Link from 'next/link';
 
 type Users = {
+  id: number;
   confirmed: boolean;
   email: string;
   firstName: string;
   handle: string;
-  id: number;
   isActive: boolean;
   lastName: string;
   mainGame: string;
@@ -15,7 +15,7 @@ type Users = {
   sideGames: string;
 };
 
-type Props = { users: Users };
+type Props = { users: Users[] };
 
 const UsersPage = (props: Props) => {
   console.log(props.users);
@@ -24,7 +24,7 @@ const UsersPage = (props: Props) => {
     <div>
       <Head>
         <title>{props.users.handle}</title>
-        <link rel='icon' href='/favicon.ico' />
+        <link rel='icon' href='/vdv-logo' />
       </Head>
 
       <main className='container'>
@@ -42,7 +42,7 @@ const UsersPage = (props: Props) => {
           <ul>
             {props.users.map(user => {
               return (
-                <li className='listItem' key={user.id}>
+                <li className='listsers' key={user.id}>
                   <Link href={'/users/' + user.id} as={'/users/' + user.id}>
                     <a>
                       <h2>{user.handle}</h2>
@@ -73,7 +73,7 @@ export async function getServerSideProps(context) {
 
   return {
     props: {
-      users,
+      users: users,
     },
   };
 }

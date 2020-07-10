@@ -70,6 +70,8 @@ const Page = ({ children }) => (
 
             <NavLink href='/memberships'>Memberships</NavLink>
 
+            <NavLink href='/pages/users/usersPage.tsx'>Members</NavLink>
+
             <Contact
             // sx={{
             //   justifySelf: 'flex-end',

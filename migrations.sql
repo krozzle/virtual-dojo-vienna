@@ -1,6 +1,6 @@
 CREATE TYPE roles as ENUM ('member', 'orga', 'admin');
 
-CREATE TABLE "public"."User" (
+CREATE TABLE "public"."users" (
   id SERIAL PRIMARY KEY NOT NULL,
   "firstName" VARCHAR(255), 
   "lastName" VARCHAR(255),
@@ -15,7 +15,7 @@ CREATE TABLE "public"."User" (
   "isActive" BOOLEAN NOT NULL DEFAULT true
 );
 
-INSERT INTO "public"."User" (
+INSERT INTO "public"."users" (
   "firstName", "lastName", "handle", "email", "role", "confirmed",  "mainGame", "sideGames", "isActive"
 ) VALUES ('kroz', 'zle', 'kbrownie', 'kroz@zle.com', 'admin', 'true', 'sfv', 'mhw', 'true');
 
