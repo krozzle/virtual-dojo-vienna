@@ -16,3 +16,4 @@ dist
 unused/
 .env.typeorm.old
 migrations.sql
+db.js

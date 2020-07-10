@@ -16,8 +16,8 @@ CREATE TABLE "public"."User" (
 );
 
 INSERT INTO "public"."User" (
-  "firstName", "lastName", email, role, 'confirmed',  "mainGame", "sideGames", "isActive"
-) VALUES ('kroz', 'zle', 'kroz@zle.com', 'admin', 'true', 'sfv', 'mhw', 'true');
+  "firstName", "lastName", "handle", "email", "role", "confirmed",  "mainGame", "sideGames", "isActive"
+) VALUES ('kroz', 'zle', 'kbrownie', 'kroz@zle.com', 'admin', 'true', 'sfv', 'mhw', 'true');
 
 
 -- add password (not cleartext)
