@@ -33,8 +33,9 @@ const User = (props: Props) => {
     <div className='container'>
       <Head>
         <title>{props.user.handle}</title>
-        <link rel='icon' href='/vdv-logo' />
+        <link rel='icon' href='/vdv-logo.jpg' />
       </Head>
+      <h1>{props.user.handle}</h1>
     </div>
   );
 };
@@ -43,7 +44,7 @@ export default User;
 export async function getServerSideProps(context) {
   // const id = context.params.id;
   const { getUserById } = await import('../../db');
-  const product = await getUserById(context.params.id);
+  const user = await getUserById(context.params.id);
   // console.log('product', product);
   if (user === undefined) {
     return { props: {} };

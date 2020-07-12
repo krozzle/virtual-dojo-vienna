@@ -2,6 +2,8 @@ import React from 'react';
 import Head from 'next/head';
 import Link from 'next/link';
 
+// todo query apolloserver
+
 type Users = {
   id: number;
   confirmed: boolean;
@@ -18,36 +20,32 @@ type Users = {
 type Props = { users: Users[] };
 
 const UsersPage = (props: Props) => {
-  console.log(props.users);
-  const users = props.users ? props.users : [];
+  console.log('props', props.users);
+  // const users = props.users ? props.users : [];
   return (
     <div>
       <Head>
-        <title>{props.users.handle}</title>
+        <title>usersPage</title>
         <link rel='icon' href='/vdv-logo' />
       </Head>
 
-      <main className='container'>
-        <div className='column'>
-          <p className='description'>
-            <code>welcome to</code>
-          </p>
-          <h1>The Smelly Husband's</h1>
+      <main>
+        <div>
           <p>
-            <code>online store</code>
+            <code>vdv</code>
           </p>
         </div>
 
-        <div className='grid'>
+        <div>
           <ul>
             {props.users.map(user => {
               return (
-                <li className='listsers' key={user.id}>
+                <li key={user.id}>
                   <Link href={'/users/' + user.id} as={'/users/' + user.id}>
                     <a>
                       <h2>{user.handle}</h2>
-                      <img className='image' src={user.img} alt='a user' />
-                      <p>{user.price} €</p>
+                      {/* <img className='image' src={user.img} alt='a user' /> */}
+                      <p>{user.mainGame} €</p>
                     </a>
                   </Link>
                 </li>
@@ -62,8 +60,15 @@ const UsersPage = (props: Props) => {
 export default UsersPage;
 
 export async function getServerSideProps(context) {
+  // console.log(context);
   const { getUsers } = await import('../../db');
   const users = await getUsers();
+  // todo map over users (unix time)..convert date to unix time, maybe milliseconds
+  const unixTimeStamp = users.map(({ created_at, updated_at, ...users }) => {
+    const date = new Date('2020.07.12').getTime() / 1000;
+    console.log('unixTimeStamp');
+    return users;
+  });
   console.log('users', users);
   // console.log(products);
   // console.log('context', context);
@@ -73,7 +78,9 @@ export async function getServerSideProps(context) {
 
   return {
     props: {
-      users: users,
+      users: users.map(({ created_at, updated_at, ...rest }) => {
+        return rest;
+      }),
     },
   };
 }
