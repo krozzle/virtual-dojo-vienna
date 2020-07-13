@@ -4,22 +4,20 @@ generator client {
 
 datasource db {
   provider = "postgresql"
-  url      = "postgres://kbrownie:postgres@localhost:5432/vdv?schema=public"
+  url      = "postgres://kbrownie:postgres@localhost:3000/vdv?schema=public"
 }
 
-model User {
-  confirmed  Boolean  @default(false)
-  created_at DateTime @default(now())
-  email      String   @unique
-  firstName  String?
-  handle     String   @unique
-  id         Int      @default(autoincrement()) @id
-  isActive   Boolean  @default(true)
-  lastName   String?
-  mainGame   String?
-  role       roles?
-  sideGames  String?
-  updated_at DateTime @default(now())
+model users {
+  confirmed Boolean @default(false)
+  email     String  @unique
+  firstName String?
+  handle    String  @unique
+  id        Int     @default(autoincrement()) @id
+  isActive  Boolean @default(true)
+  lastName  String?
+  mainGame  String?
+  role      roles?
+  sideGames String?
 }
 
 enum roles {

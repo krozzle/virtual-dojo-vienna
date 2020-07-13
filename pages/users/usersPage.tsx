@@ -9,18 +9,18 @@ type Users = {
   confirmed: boolean;
   email: string;
   firstName: string;
+  lastName: string;
   handle: string;
   isActive: boolean;
-  lastName: string;
-  mainGame: string;
   role: string;
+  mainGame: string;
   sideGames: string;
 };
 
 type Props = { users: Users[] };
 
 const UsersPage = (props: Props) => {
-  console.log('props', props.users);
+  // console.log('props', props.users);
   // const users = props.users ? props.users : [];
   return (
     <div>
@@ -45,7 +45,7 @@ const UsersPage = (props: Props) => {
                     <a>
                       <h2>{user.handle}</h2>
                       {/* <img className='image' src={user.img} alt='a user' /> */}
-                      <p>{user.mainGame} €</p>
+                      <p>{user.mainGame}</p>
                     </a>
                   </Link>
                 </li>
@@ -62,14 +62,15 @@ export default UsersPage;
 export async function getServerSideProps(context) {
   // console.log(context);
   const { getUsers } = await import('../../db');
+
   const users = await getUsers();
   // todo map over users (unix time)..convert date to unix time, maybe milliseconds
-  const unixTimeStamp = users.map(({ created_at, updated_at, ...users }) => {
-    const date = new Date('2020.07.12').getTime() / 1000;
-    console.log('unixTimeStamp');
-    return users;
-  });
+  // const unixTimeStamp = users.map(user => {
+  //   const date = new Date().getTime() / 1000;
+  //   return users;
+  // });
   console.log('users', users);
+
   // console.log(products);
   // console.log('context', context);
   if (users === undefined) {
@@ -78,9 +79,15 @@ export async function getServerSideProps(context) {
 
   return {
     props: {
-      users: users.map(({ created_at, updated_at, ...rest }) => {
-        return rest;
-      }),
+      users,
     },
   };
 }
+// ! dirty way!!!
+// return {
+//   props: {
+//     users: users.map(({ created_at, updated_at, ...rest }) => {
+//       return rest;
+//     }),
+//   },
+// };

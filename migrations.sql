@@ -10,8 +10,6 @@ CREATE TABLE "public"."users" (
   confirmed BOOLEAN NOT NULL DEFAULT false,
   "mainGame" VARCHAR(255),
   "sideGames" VARCHAR(255),
-  created_at timestamp  NOT NULL  DEFAULT current_timestamp,
-  updated_at timestamp  NOT NULL  DEFAULT current_timestamp,
   "isActive" BOOLEAN NOT NULL DEFAULT true
 );
 
@@ -20,4 +18,6 @@ INSERT INTO "public"."users" (
 ) VALUES ('kroz', 'zle', 'kbrownie', 'kroz@zle.com', 'admin', 'true', 'sfv', 'mhw', 'true');
 
 
+-- created_at timestamp  NOT NULL  DEFAULT current_timestamp,
+-- updated_at timestamp  NOT NULL  DEFAULT current_timestamp,
 -- add password (not cleartext)

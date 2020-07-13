@@ -2,15 +2,15 @@ import React, { useState } from 'react';
 import Head from 'next/head';
 
 type User = {
+  id: number;
   confirmed: boolean;
   email: string;
   firstName: string;
-  handle: string;
-  id: number;
-  isActive: boolean;
   lastName: string;
-  mainGame: string;
+  handle: string;
+  isActive: boolean;
   role: string;
+  mainGame: string;
   sideGames: string;
 };
 type Props = { user: User };

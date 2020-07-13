@@ -6,21 +6,21 @@ const typeDefs = gql`
   }
   type User {
     id: Int
+    confirmed: Boolean
     email: String
     firstName: String
     lastName: String
     handle: String
-    role: String
     isActive: Boolean
+    role: String
     mainGame: String
     sideGames: String
-    confirmed: Boolean
   }
 `;
 
 export const resolvers = {
   Query: {
-    users(parent, args, context) {
+    users(User) {
       // getUser: async (_: any, args: any) => {
       return [{ firstName: 'next.js' }];
     },
