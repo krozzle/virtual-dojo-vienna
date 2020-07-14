@@ -57,8 +57,7 @@
     "remove": "^0.1.5",
     "swr": "^0.2.3",
     "theme-ui": "^0.3.1",
-    "type-graphql": "^1.0.0-rc.3",
-    "typeorm": "^0.2.25"
+    "type-graphql": "^1.0.0-rc.3"
   },
   "scripts": {
     "dev": "next dev",

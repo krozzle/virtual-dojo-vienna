@@ -8,7 +8,7 @@ A date string, such as 2007-12-03, compliant with the `full-date` format outline
 scalar Date
 
 type Mutation {
-  signupUser(email: String!, firstName: String): User!
+  signupUser(email: String!, firstName: String, handle: String!, id: Int!, lastName: String): User!
 }
 
 type Query {
@@ -16,12 +16,12 @@ type Query {
 }
 
 type User {
-  confirmed: String!
+  confirmed: Boolean!
   email: String!
   firstName: String!
   handle: String!
   id: Int!
-  isActive: String!
+  isActive: Boolean!
   lastName: String!
   mainGame: String!
   role: String!

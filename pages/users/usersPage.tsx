@@ -25,8 +25,8 @@ const UsersPage = (props: Props) => {
   return (
     <div>
       <Head>
-        <title>usersPage</title>
-        <link rel='icon' href='/vdv-logo' />
+        <title>Members</title>
+        <link rel='icon' href='/vdv-logo.jpg' />
       </Head>
 
       <main>
@@ -83,7 +83,7 @@ export async function getServerSideProps(context) {
     },
   };
 }
-// ! dirty way!!!
+// ! dirty way of getting rid of the serialize error because of datetime in postgresql!!!
 // return {
 //   props: {
 //     users: users.map(({ created_at, updated_at, ...rest }) => {

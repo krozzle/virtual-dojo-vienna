@@ -31,12 +31,12 @@ export interface NexusGenRootTypes {
   Mutation: {};
   Query: {};
   User: { // root type
-    confirmed: string; // String!
+    confirmed: boolean; // Boolean!
     email: string; // String!
     firstName: string; // String!
     handle: string; // String!
     id: number; // Int!
-    isActive: string; // String!
+    isActive: boolean; // Boolean!
     lastName: string; // String!
     mainGame: string; // String!
     role: string; // String!
@@ -61,12 +61,12 @@ export interface NexusGenFieldTypes {
     user: NexusGenRootTypes['User']; // User!
   }
   User: { // field return type
-    confirmed: string; // String!
+    confirmed: boolean; // Boolean!
     email: string; // String!
     firstName: string; // String!
     handle: string; // String!
     id: number; // Int!
-    isActive: string; // String!
+    isActive: boolean; // Boolean!
     lastName: string; // String!
     mainGame: string; // String!
     role: string; // String!
@@ -79,6 +79,9 @@ export interface NexusGenArgTypes {
     signupUser: { // args
       email: string; // String!
       firstName?: string | null; // String
+      handle: string; // String!
+      id: number; // Int!
+      lastName?: string | null; // String
     }
   }
   Query: {
